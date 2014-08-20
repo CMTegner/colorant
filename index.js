@@ -6,7 +6,7 @@ var input = document.querySelector('input');
 function tryParse(color) {
     try {
         return c(color);
-    } catch(e) {}
+    } catch (e) {}
 }
 
 function set(color) {
@@ -26,7 +26,7 @@ function set(color) {
         return;
     }
     document.body.style.backgroundColor = color;
-    input.style.color = rgb.negate().greyscale().lighten(.5).rgbaString();
+    input.style.color = rgb.negate().greyscale().lighten(0.5).rgbaString();
     if (!input.value) {
         input.value = color;
     }
@@ -47,4 +47,3 @@ set(decodeURIComponent(hash));
 // TODO: Add color details below input
 // TODO: Set default input value to default background color
 // TODO: Favicon require('ndarray-canvas')(canvas, red, green, blue)
-
