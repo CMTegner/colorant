@@ -33,7 +33,7 @@ function set(color) {
     if (color[0] === '#') {
         color = color.substring(1);
     }
-    location.hash = encodeURIComponent(color);
+    location.hash = encodeURIComponent(color.toLowerCase());
 }
 
 input.addEventListener('input', function() {
