@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/CMTegner/colorant/issues"
   },
-  "homepage": "https://github.com/CMTegner/colorant",
+  "homepage": "http://color.ima.computer",
   "dependencies": {
     "browserify": "^5.10.0",
     "color": "^0.7.1"
