@@ -11,6 +11,9 @@ function tryParse(color) {
 
 function set(color) {
     color = color.trim();
+    // `color` accepts hex strings without
+    // leading pound as long as they don't
+    // contain only digits ¯\_(ツ)_/¯
     if (/^\d+$/.test(color)) {
         color = '#' + color;
     }
@@ -42,5 +45,6 @@ var hash = hash && hash.substring(1);
 set(decodeURIComponent(hash));
 
 // TODO: Add color details below input
+// TODO: Set default input value to default background color
 // TODO: Favicon require('ndarray-canvas')(canvas, red, green, blue)
 
