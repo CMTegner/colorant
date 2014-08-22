@@ -31,15 +31,17 @@ function set(color) {
     if (!rgb) {
         return;
     }
+    color = color.toLowerCase();
     document.body.style.backgroundColor = color;
     input.style.color = rgb.clone().negate().greyscale().lighten(0.5).rgbaString();
     if (!input.value) {
         input.value = color;
     }
+    document.title = color;
     if (color[0] === '#') {
         color = color.substring(1);
     }
-    location.hash = encodeURIComponent(color.toLowerCase());
+    location.hash = encodeURIComponent(color);
     raf.cancel(id);
     tweenFavicon(icon, current.rgbArray(), rgb.rgbArray(), 500);
     current = rgb;
@@ -74,3 +76,4 @@ if (hash) {
 
 // TODO: Add color details below input
 // TODO: Improve text color, e.g. #5ad
+// TODO: Cli that opens browser
