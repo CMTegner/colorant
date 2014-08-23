@@ -6,7 +6,7 @@
     "build": "browserify index.js -o bundle.js",
     "start": "npm run build && open index.html",
     "prepublish": "npm run build",
-    "test": "jshint *.js bin/*.js && jscs *.js bin/*.js"
+    "test": "jshint index.js urlize.js bin/*.js && jscs index.js urlize.js bin/*.js"
   },
   "bin": {
     "color": "bin/cli.js"
