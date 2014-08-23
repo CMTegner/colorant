@@ -2,6 +2,7 @@
   "name": "colorant",
   "version": "1.1.2",
   "description": "A webapp for visualising web colors",
+  "preferGlobal": true,
   "scripts": {
     "build": "browserify index.js -o bundle.js",
     "start": "npm run build && open index.html",
