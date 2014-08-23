@@ -9,7 +9,7 @@ A CLI tool and webapp combo for visualising web colors
 ## Install
 
 ```sh
-$ npm install colorant
+$ npm install -g colorant
 ```
 
 ## Usage
@@ -23,4 +23,13 @@ color     The color to inspect
 
 Options:
    --version   Print version and exit
+```
+
+Example:
+
+```sh
+$ color "rgb(68, 68, 68)"
+$ color cyan
+$ color #bada55
+$ color "hsla(170, 50%, 45%, 1)"
 ```
