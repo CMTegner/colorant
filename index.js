@@ -1,5 +1,5 @@
 var c = require('color');
-var favicon = require('favicon-color');
+var favicolor = require('favicolor');
 var now = require('performance-now');
 var raf = require('raf');
 var url = require('url');
@@ -52,7 +52,7 @@ function tweenFavicon(icon, from, to, duration) {
     var diff = [to[0] - from[0], to[1] - from[1], to[2] - from[2]];
     id = raf(function loop() {
         var ratio = Math.min(1, 1 - ((end - now()) / duration));
-        favicon(icon,
+        favicolor(icon,
             Math.floor(from[0] + (diff[0] * ratio)),
             Math.floor(from[1] + (diff[1] * ratio)),
             Math.floor(from[2] + (diff[2] * ratio)));
