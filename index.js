@@ -15,23 +15,20 @@ function tryParse(color) {
     } catch (e) {}
 }
 
+function prepare(color) {
+    color = color.trim().toLowerCase();
+    if (/^([0-9a-f]{3}){1,2}$/.test(color)) {
+        color = '#' + color;
+    }
+    return color;
+}
+
 function set(color) {
-    color = color.trim();
-    // `color` accepts hex strings without
-    // leading pound as long as they don't
-    // contain only digits ¯\_(ツ)_/¯
-    if (/^\d+$/.test(color)) {
-        color = '#' + color;
-    }
+    color = prepare(color);
     var rgb = tryParse(color);
-    if (!rgb) {
-        color = '#' + color;
-        rgb = tryParse(color);
-    }
     if (!rgb) {
         return;
     }
-    color = color.toLowerCase();
     document.body.style.backgroundColor = color;
     input.style.color = rgb.clone().negate().greyscale().lighten(0.5).rgbaString();
     if (!input.value) {
