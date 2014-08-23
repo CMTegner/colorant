@@ -1,6 +1,6 @@
 # colorant
 
-A webapp for visualising web colors
+A CLI tool and webapp combo for visualising web colors
 
 [![Travis CI Build Status](https://travis-ci.org/CMTegner/colorant.svg)](http://travis-ci.org/CMTegner/colorant) [![Dependency Status](https://david-dm.org/CMTegner/colorant/status.svg)](https://david-dm.org/CMTegner/colorant)
 
@@ -12,8 +12,15 @@ A webapp for visualising web colors
 $ npm install colorant
 ```
 
-## Run
+## Usage
 
 ```sh
-/path/to/colorant $ npm start
+$ color --help
+
+Usage: color [color] [options]
+
+color     The color to inspect
+
+Options:
+   --version   Print version and exit
 ```
