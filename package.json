@@ -5,6 +5,7 @@
   "scripts": {
     "build": "browserify index.js -o bundle.js",
     "start": "npm run build && open index.html",
+    "prepublish": "npm run build",
     "test": "jshint *.js bin/*.js && jscs *.js bin/*.js"
   },
   "bin": {
