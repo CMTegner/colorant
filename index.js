@@ -3,6 +3,8 @@ var favicolor = require('favicolor');
 var now = require('performance-now');
 var raf = require('raf');
 var url = require('url');
+var hyperquest = require('hyperquest');
+var urlize = require('./urlize.js');
 
 var id;
 var input = document.querySelector('input');
@@ -35,10 +37,7 @@ function set(color) {
         input.value = color;
     }
     document.title = color;
-    if (color[0] === '#') {
-        color = color.substring(1);
-    }
-    location.hash = encodeURIComponent(color);
+    location.hash = urlize(color);
     raf.cancel(id);
     tweenFavicon(icon, current.rgbArray(), rgb.rgbArray(), 500);
     current = rgb;
@@ -64,13 +63,14 @@ input.addEventListener('input', function() {
 });
 
 var hash = url.parse(location.href).hash;
-var hash = hash && hash.substring(1);
+hash = hash && hash.substring(1);
 if (hash) {
     set(decodeURIComponent(hash));
 } else {
     set(current.keyword() || current.hexString());
 }
 
+hyperquest(location.href.split('#')[0] + '/close');
+
 // TODO: Add color details below input
 // TODO: Improve text color, e.g. #5ad
-// TODO: Cli that opens browser
